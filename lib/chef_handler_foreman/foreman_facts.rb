@@ -37,8 +37,8 @@ module ChefHandlerForeman
         os = node.lsb[:id]
         release = node.lsb[:release]
       end
-      os ||= node.platform
-      release ||= node.platform_version
+      os ||= node['platform']
+      release ||= node['platform_version']
 
       # operatingsystem and operatingsystemrelase are not needed since foreman_chef 0.1.3
       { :name  => node.name.downcase,
